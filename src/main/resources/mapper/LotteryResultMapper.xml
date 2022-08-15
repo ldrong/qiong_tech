@@ -17,13 +17,13 @@
         <result property="gmtUpdateTime" column="gmtUpdateTime" javaType="java.time.LocalDateTime"/>
     </resultMap>
 
-    <select id="getLotteryResult" resultMap="lotteryResultMapper" parameterType="java.lang.String,long">
+    <select id="getLotteryResult" resultMap="lotteryResultMapper">
         select id, lotteryId, lotteryNo, lotteryName, lotteryRes, lotteryDate, lotteryExDate, lotterySaleAmount, lotteryPoolAmount, lotteryPrize, gmtCreateTime,gmtUpdateTime
         from lottery_result
         where lotteryId = #{lotteryId}
         and lotteryNo = #{lotteryNo}
     </select>
-    <select id="getLotteryResultDefault" resultMap="lotteryResultMapper" parameterType="java.lang.String">
+    <select id="getLotteryResultDefault" resultMap="lotteryResultMapper">
         select id, lotteryId, lotteryNo, lotteryName, lotteryRes, lotteryDate, lotteryExDate, lotterySaleAmount, lotteryPoolAmount, lotteryPrize, gmtCreateTime,gmtUpdateTime
         from lottery_result
         where lotteryId = #{lotteryId}
